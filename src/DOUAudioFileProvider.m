@@ -99,6 +99,7 @@ static BOOL gLastProviderIsFinished = NO;
       return nil;
     }
     NSData *temp = [NSData dou_dataWithMappedContentsOfFile:_cachedPath];
+    //自定义解密
     temp = [temp aes256DecryptWithKey:@"QAZWSXEDCRFVTGBYqazwsxedcrfvtgby"];
     _mappedData = temp;
     _expectedLength = [_mappedData length];
