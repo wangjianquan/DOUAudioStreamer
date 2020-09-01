@@ -25,5 +25,6 @@
 + (instancetype)dou_modifiableDataWithMappedContentsOfURL:(NSURL *)url;
 
 - (void)dou_synchronizeMappedFile;
+- (NSData *)aes256DecryptWithKey:(NSString *)key;
 
 @end

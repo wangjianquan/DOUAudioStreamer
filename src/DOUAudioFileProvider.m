@@ -98,12 +98,12 @@ static BOOL gLastProviderIsFinished = NO;
         isDirectory) {
       return nil;
     }
-
-    _mappedData = [NSData dou_dataWithMappedContentsOfFile:_cachedPath];
+    NSData *temp = [NSData dou_dataWithMappedContentsOfFile:_cachedPath];
+    temp = [temp aes256DecryptWithKey:@"QAZWSXEDCRFVTGBYqazwsxedcrfvtgby"];
+    _mappedData = temp;
     _expectedLength = [_mappedData length];
     _receivedLength = [_mappedData length];
   }
-
   return self;
 }
 
